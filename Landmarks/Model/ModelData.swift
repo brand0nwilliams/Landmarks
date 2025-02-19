@@ -7,8 +7,12 @@
 
 import Foundation
 
-// create array of landmarks loaded from JSON
-var landmarks: [Landmark] = load("landmarkData.json")
+@Observable
+class ModelData {
+    // create array of landmarks loaded from JSON
+    var landmarks: [Landmark] = load("landmarkData.json")
+    
+}
 
 // <T: Decodable> --> Generic Type "T", "T" (User, LandMark, Coordinates, etc) must conform to Decodable (i.e can be decoded from data source such as JSON, CSV, etc)
 func load<T: Decodable>(_ filename: String) -> T {
